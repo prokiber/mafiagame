@@ -133,7 +133,7 @@ def flee(m):
 @bot.message_handler(commands=['players'])
 def playerss(m):
     if m.chat.id in games:
-        bot.send_message(m.chat.id, 'Вот список игроков', reply_to_message_id=games[m.chat.id]['users'])
+        bot.send_message(m.chat.id, 'Список игроков', reply_to_message_id=games[m.chat.id]['users'])
 
             
 def secnd(id):
@@ -167,7 +167,7 @@ def startgame(m):
         tt=threading.Timer(1, secnd, args=[m.chat.id])
         tt.start()
         Keyboard=types.InlineKeyboardMarkup()
-        Keyboard.add(types.InlineKeyboardButton(text='Присоединиться', url='telegram.me/crossfirebot?start='+str(m.chat.id)))
+        Keyboard.add(types.InlineKeyboardButton(text='Присоединиться', url='telegram.me/themafiyabot?start='+str(m.chat.id)))
         msg=bot.send_message(m.chat.id, m.from_user.first_name+' Начал(а) игру! Жмите кнопку ниже, чтобы присоединиться', reply_markup=Keyboard)
         msg2=bot.send_message(m.chat.id, 'Игроки:\n', parse_mode='markdown')
         games[m.chat.id]['users']=msg2.message_id
@@ -178,7 +178,7 @@ def startgame(m):
     else:
       if games[m.chat.id]['play']==0:
         Keyboard=types.InlineKeyboardMarkup()
-        Keyboard.add(types.InlineKeyboardButton(text='Присоединиться', url='telegram.me/crossfirebot?start='+str(m.chat.id)))
+        Keyboard.add(types.InlineKeyboardButton(text='Присоединиться', url='telegram.me/themafiyabot?start='+str(m.chat.id)))
         msg=bot.send_message(m.chat.id, 'Игра уже запущена! Жмите "присоединиться"!', reply_markup=Keyboard)
         for ids in games:
             if games[ids]['id']==m.chat.id:
@@ -493,7 +493,7 @@ def createuser(id,name):
 if True:
  try:
    print('7777')
-   bot.send_message(-1001208357368, 'Бот был перезагружен!')
+   bot.send_message(-1001521640895, 'Бот был перезагружен!')
    bot.polling(none_stop=True,timeout=600)
  except (requests.ReadTimeout):
         print('!!! READTIME OUT !!!')           
