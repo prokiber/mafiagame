@@ -265,7 +265,7 @@ def xod(id):
    
           
           
-rolechoice(onerole,allroles,mode):
+def rolechoice(onerole,allroles,mode):
         returnn=0
         while returnn==0:
                 role=random.choice(rolelist)
